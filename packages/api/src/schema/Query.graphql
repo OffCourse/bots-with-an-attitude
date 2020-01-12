@@ -1,0 +1,9 @@
+type Status {
+  currentState: String
+  toJSON: String 
+  affordances: [String]
+}
+
+type Query {
+  getStatus: Status
+}

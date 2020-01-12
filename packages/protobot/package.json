@@ -1,0 +1,37 @@
+{
+  "name": "@bwa/protobot",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Yeehaa",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "predeploy": "yarn build"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@bwa/api": "*",
+    "@bwa/botframe": "*",
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.17",
+    "@types/node-fetch": "^2.5.4",
+    "@types/ramda": "^0.26.38",
+    "@types/uuid": "^3.4.6",
+    "apollo-server": "^2.9.16",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "ramda": "^0.26.1",
+    "uuid": "^3.3.3",
+    "voca": "^1.4.0"
+  }
+}

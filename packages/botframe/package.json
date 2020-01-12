@@ -1,0 +1,45 @@
+{
+  "name": "@bwa/botframe",
+  "version": "0.0.1",
+  "description": "soemthing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "start": "concurrently \"tsc -w\"",
+    "prebuild": "yarn codegen",
+    "build": "tsc",
+    "predeploy": "yarn build",
+    "deploy": "sls deploy --stage dev"
+  },
+  "author": "Yeehaa",
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.9.1",
+    "@graphql-codegen/introspection": "1.9.1",
+    "@graphql-codegen/typescript": "1.9.1",
+    "@types/jest": "^24.0.25",
+    "@xstate/test": "^0.2.1",
+    "concurrently": "^5.0.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "@types/chai": "^4.2.7",
+    "@types/node": "^12.12.17",
+    "@types/node-fetch": "^2.5.4",
+    "@types/ramda": "^0.26.38",
+    "@types/uuid": "^3.4.6",
+    "ramda": "^0.26.1",
+    "uuid": "^3.3.3",
+    "voca": "^1.4.0",
+    "xstate": "^4.6.7"
+  }
+}
