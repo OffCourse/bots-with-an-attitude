@@ -30,4 +30,5 @@ graphql.applyMiddleware({ app: server, path: "/graphql" });
 const PORT = 3333;
 server.listen(PORT, () => {
   console.log(`server is running on ${3333} port...`);
+  console.log(`slackwebhook under /webhooks/slack route`);
 });
