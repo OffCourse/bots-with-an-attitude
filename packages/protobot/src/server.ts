@@ -3,7 +3,7 @@ import { ApolloServer } from "apollo-server-express";
 import botConfig from "@bwa/api";
 import { init } from "@bwa/botframe";
 
-const { path, ...slackConfig } = require("../bottender.config").channels.slack;
+const { path, ...slackConfig } = require("./bottender.config").channels.slack;
 
 const bot = new SlackBot({
   ...slackConfig

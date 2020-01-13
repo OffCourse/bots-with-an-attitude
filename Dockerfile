@@ -34,6 +34,7 @@ COPY --from=build /usr/src/app/packages/botframe/dist /usr/src/app/packages/botf
 
 COPY --from=build /usr/src/app/packages/protobot/package.json /usr/src/app/packages/protobot/package.json
 COPY --from=build /usr/src/app/packages/protobot/dist /usr/src/app/packages/protobot/dist
+COPY --from=build /usr/src/app/packages/protobot/.env /usr/src/app/packages/protobot/.env
 
 ENV NODE_ENV production
 
@@ -41,4 +42,4 @@ RUN yarn install --pure-lockfile --non-interactive --production
 
 WORKDIR /usr/src/app/packages/protobot
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/server.js"]
