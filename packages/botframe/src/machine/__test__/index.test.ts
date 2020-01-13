@@ -6,6 +6,7 @@ import * as baseActions from "../actions";
 import { setCassettes } from "./actions";
 import * as services from "./services";
 import { MachineContext, MachineEventType } from "../types";
+import context from "../defaultContext";
 
 const { INITIALIZED, RESET, FETCHED_STATS } = MachineEventType;
 
@@ -13,7 +14,7 @@ const actions = { ...baseActions, setCassettes };
 const config = { guards, actions, services };
 
 describe("feedback app", () => {
-  const machine = TestMachine.withConfig(config);
+  const machine = TestMachine.withConfig(config).withContext(context);
 
   const testModel = createModel<TestMachine, MachineContext>(
     machine
@@ -51,7 +52,7 @@ describe("feedback app", () => {
     describe(plan.description, () => {
       plan.paths.forEach(path => {
         it(path.description, () => {
-          const sut: TestMachine = init(config);
+          const sut: TestMachine = init({ onEvent: () => {} }, config);
           return path.test(sut);
         });
       });

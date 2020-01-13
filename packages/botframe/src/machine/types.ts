@@ -14,8 +14,10 @@ export interface MachineEvent {
   type: MachineEventType;
   payload?: BwaConfig | { stats: MachineStats };
 }
+export type BotController = { onEvent: (context: any) => void };
 
 export type MachineContext = {
+  controller: BotController;
   botName: string | undefined;
   decks: any;
   ref: any;

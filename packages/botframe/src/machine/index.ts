@@ -7,13 +7,6 @@ type Machine = Interpreter<MachineContext, MachineState, MachineEvent>;
 
 const Machine = createMachine<MachineContext, MachineEvent, MachineState>({
   initial: "dormant",
-  context: {
-    botName: undefined,
-    ref: undefined,
-    decks: undefined,
-    stats: undefined,
-    error: undefined
-  },
   states: {
     dormant: {
       on: {
@@ -68,6 +61,7 @@ const Machine = createMachine<MachineContext, MachineEvent, MachineState>({
       }
     },
     alive: {
+      entry: ["listen"],
       on: {
         FETCHED_STATS: [
           { target: "alive", cond: "isContextValid" },

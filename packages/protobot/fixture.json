@@ -1,0 +1,85 @@
+{
+  "_isHandled": false,
+  "_isSessionWritten": false,
+  "_client": {
+    "_token": "xoxb-10875394288-848687093701-3x8iluAoRrRh6wMoLll2eI6d",
+    "chat": {
+      "scheduledMessages": {}
+    },
+    "views": {}
+  },
+  "_event": {
+    "_rawEvent": {
+      "clientMsgId": "04e77bd8-1dd9-473f-b573-767d4fa3d7d9",
+      "type": "message",
+      "text": "fadskdlk",
+      "user": "U0D6EPESC",
+      "ts": "1578948261.014400",
+      "team": "T0ARRBL8G",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "blockId": "/pu",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "fadskdlk"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "channel": "C1B9JK8PK",
+      "eventTs": "1578948261.014400",
+      "channelType": "channel"
+    }
+  },
+  "_session": {
+    "id": "slack:C1B9JK8PK",
+    "platform": "slack",
+    "user": {
+      "id": "U0D6EPESC",
+      "_updatedAt": "2020-01-13T20:44:22.794Z"
+    },
+    "channel": {
+      "id": "C1B9JK8PK",
+      "_updatedAt": "2020-01-13T20:44:22.794Z"
+    },
+    "_state": {}
+  },
+  "_initialState": {},
+  "_requestContext": {
+    "method": "POST",
+    "path": "/webhooks/slack",
+    "query": {},
+    "headers": {
+      "host": "77465b24.ngrok.io",
+      "user-agent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+      "accept": "*/*",
+      "accept-encoding": "gzip,deflate",
+      "content-type": "application/json",
+      "x-slack-signature": "v0=0d6ce866ec501d7f3af790c2387d4cbd4746ffe17a125a5b7217a57b18b32f7d",
+      "x-slack-request-timestamp": "1578948262",
+      "content-length": "564",
+      "x-forwarded-proto": "https",
+      "x-forwarded-for": "54.209.161.189"
+    }
+  },
+  "_emitter": {
+    "_events": {},
+    "_eventsCount": 1
+  },
+  "response": {
+    "status": 200,
+    "headers": {},
+    "body": null
+  },
+  "chat": {
+    "scheduledMessages": {}
+  },
+  "views": {}
+}

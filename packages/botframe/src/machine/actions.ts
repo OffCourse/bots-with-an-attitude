@@ -1,6 +1,8 @@
 import { assign, spawn } from "xstate";
 import { MachineContext, MachineEvent } from "./types";
 import Deck from "../deck";
+const { router } = require("bottender/router");
+import routes from "./routes";
 
 export const setBotName = assign<MachineContext, MachineEvent>({
   botName: (_context, { payload }: any) => payload.botName
@@ -45,3 +47,9 @@ export const reset = assign<MachineContext, MachineEvent>({
   stats: undefined,
   error: undefined
 });
+
+export const listen = ({ controller }: MachineContext) => {
+  controller.onEvent(async (_context: any) => {
+    return router(routes);
+  });
+};
