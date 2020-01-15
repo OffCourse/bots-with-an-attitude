@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn workspace @bwa/api build && yarn workspace @bwa/botframe build && yarn workspace @bwa/protobot build"
+    "build": "yarn workspace @bwa/botframe build && yarn workspace @bwa/api build && yarn workspace @bwa/protobot build"
   },
   "workspaces": [
     "packages/*"
