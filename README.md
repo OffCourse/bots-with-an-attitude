@@ -7,7 +7,8 @@ steps to make this work:
    yarn build
    ```
 
-2. Make sure you register your app with the slack events api and update the 
+2. Make sure you register your app with the slack events api (listen at least for these 
+   three events: ["message.channels", "message.groups", "message.im"]) and update the 
    /packages/protobot/.env.sample with your credentials and save it as .env.
    Instructions can be found [here](https://bottender.js.org/docs/channel-slack-setup)
 
