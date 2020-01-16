@@ -1,7 +1,7 @@
 exports.getTweets = async (forceRetrieve = false) => {
-	const saveFilePath = "./data/tweets.json";
-	const loadFilePath = "." + saveFilePath;
-	const userList = require("../data/users.json");
+	const saveFilePath = "./tweets.json";
+	const loadFilePath = saveFilePath;
+	const userList = require("./users.json");
 	let usersToRetrieve = []; // Users yet to retrieve from the API
 	let tweetsObj = []; // Object containing the usernames and their tweets
 

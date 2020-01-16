@@ -8,8 +8,16 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "allowJs": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
-  "lib": ["es2015"]
+  "lib": ["es2015"],
+  "exclude": [    
+    "**/@tensorflow",
+    "**/@tensorflow/**",
+    "**@tensorflow/tfjs",
+    "**@tensorflow/tfjs**"
+  ]
 }

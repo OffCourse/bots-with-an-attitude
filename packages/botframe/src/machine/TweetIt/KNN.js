@@ -122,14 +122,14 @@ class KNN {
 
 	async saveVocabulary(text) {
 		this.voc = dict(text);
-		fs.writeFileSync(`data/twitter_knn_vocabulary_${this.username}.json`, JSON.stringify(this.voc), function () {});
+		fs.writeFileSync(`twitter_knn_vocabulary_${this.username}.json`, JSON.stringify(this.voc), function () {});
 		console.log("Succesfully saved the vocabulary for user [" + this.username + "]");
 	}
 
 	async loadVocabulary() {
 		//Try to load an existing vocabulary
 		try {
-			this.voc = await require(`../data/twitter_knn_vocabulary_${this.username}.json`);
+			this.voc = await require(`./twitter_knn_vocabulary_${this.username}.json`);
 			return true;
 		} catch (error) {
 			return false;

@@ -13,7 +13,7 @@
     "serve": "nodemon dist/serve.js",
     "start": "concurrently \"yarn:watch-ts\" \"yarn:serve\"",
     "build": "tsc",
-    "postbuild": "cpr src/schema dist",
+    "postbuild": "cpr src/schema dist/schema",
     "predeploy": "yarn build"
   },
   "author": "Yeehaa",

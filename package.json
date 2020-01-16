@@ -8,6 +8,10 @@
   ],
   "nohoist": [
     "**/rimraf",
-    "**/rimraf/**"
+    "**/rimraf/**",
+    "**/@tensorflow",
+    "**/@tensorflow/**",
+    "**@tensorflow/tfjs",
+    "**@tensorflow/tfjs**"
   ]
 }
