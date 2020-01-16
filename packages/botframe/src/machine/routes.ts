@@ -1,3 +1,5 @@
+import context from "./defaultContext";
+
 const { text } = require("bottender/router");
 const Knn = require('./TweetIt/KNN.js')
 
@@ -10,15 +12,18 @@ const sayGoodbye = async (context: any) => {
 };
 
 const getRecommendations = async (_tweet: string) => {
-  const knn = new Knn("");
+  const knn = new Knn("yeehaa");
   const neighbors = 4;
-  return await knn.getRecommendations(_tweet, neighbors).split(0,3)
+  console.log("getting recommendations for tweet: ", _tweet)
+  let result = await knn.getRecommendation(_tweet, neighbors)
+  result = result.slice(0,3)
+  result = result[0].key + " " + result[1].key + " " + result[2].key
+  return result;
 };
 
 const recommend = async (context: any) => {
-  console.log(context.event.text)
-  const recommendations = getRecommendations(context.event.text);
-  await context.sendText(JSON.stringify(recommendations));
+  const recommendations = await getRecommendations(context.event.text);
+  await context.sendText(recommendations);
 };
 
 const routes = [

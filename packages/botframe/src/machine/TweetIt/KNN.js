@@ -27,8 +27,8 @@ class KNN {
 		//Put result in a list so it can be sorted
 		for (var key in result.confidences) {
 			output.push({
-				key: key,
-				confidence: result.confidences[key]
+				 key: key,
+				 confidence: result.confidences[key]				
 			});
 		}
 		output.sort(this.compare);
@@ -41,16 +41,17 @@ class KNN {
 			//Check if there is already a existing dataset knn can read.
 			if (await this.loadDataset() && await this.loadVocabulary(this.voc)) {
 				console.log("Dataset and vocabulary were succesfully loaded");
-			} else {
-				//Gets the vectorized dataset
-				const object = await this.getVectorizedData();
-				//Puts the new dataset in the classifier
-				object.forEach(vector => {
-					this.classifier.addExample(tf.tensor(vector.example), vector.label);
-				});
-				//Saves the dataset for the next time
-				await this.saveDataset();
 			}
+			//  else {
+			// 	//Gets the vectorized dataset
+			// 	const object = await this.getVectorizedData();
+			// 	//Puts the new dataset in the classifier
+			// 	object.forEach(vector => {
+			// 		this.classifier.addExample(tf.tensor(vector.example), vector.label);
+			// 	});
+			// 	//Saves the dataset for the next time
+			// 	await this.saveDataset();
+			// }
 		} catch (error) {
 			console.log(error);
 		}
@@ -79,7 +80,9 @@ class KNN {
 
 	async getRawData() {
 		try {
+			console.log("retrieving text")
 			const text = await dataRetriever.getTweets();
+			console.log(text)
 			return text;
 		} catch (error) {
 			//Get all tweets if there isn't a file available.
@@ -97,14 +100,16 @@ class KNN {
 				[key]: dataset[key].arraySync()
 			});
 		}
-		fs.writeFile(`data/twitter_knn_dataset_${this.username}.json`, JSON.stringify(jsonDataset), function () {});
+		fs.writeFile(`twitter_knn_dataset_${this.username}.json`, JSON.stringify(jsonDataset), function () {});
 		console.log("Successfully saved the dataset for user [" + this.username + "]");
 	}
 
 	async loadDataset() {
 		//Try to load an existing dataset
 		try {
-			const jsonDataset = await require(`../data/twitter_knn_dataset_${this.username}.json`);
+			console.log("getting dataset")
+			const jsonDataset = await require(`./twitter_knn_dataset_yeehaa.json`);
+			console.log("dataset = ", jsonDataset)
 			var dataset = {};
 			for (var index in jsonDataset) {
 				for (var key in jsonDataset[index]) {
@@ -116,6 +121,7 @@ class KNN {
 			this.classifier.setClassifierDataset(dataset);
 			return true;
 		} catch (error) {
+			console.log("dataset:" ,jsonDataset)
 			return false;
 		}
 	}
@@ -129,9 +135,10 @@ class KNN {
 	async loadVocabulary() {
 		//Try to load an existing vocabulary
 		try {
-			this.voc = await require(`./twitter_knn_vocabulary_${this.username}.json`);
+			this.voc = await require(`./twitter_knn_vocabulary_yeehaa.json`);
 			return true;
 		} catch (error) {
+			console.log("vocabulary:" ,voc)
 			return false;
 		}
 	}
