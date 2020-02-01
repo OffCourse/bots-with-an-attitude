@@ -204,8 +204,8 @@
                 "kind": "LIST",
                 "name": null,
                 "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
+                  "kind": "INPUT_OBJECT",
+                  "name": "Cassette",
                   "ofType": null
                 }
               }
@@ -223,6 +223,27 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "Cassette",
+        "description": "",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": "",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "defaultValue": null
           }

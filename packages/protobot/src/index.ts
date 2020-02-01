@@ -3,6 +3,7 @@ const { router, slack } = require("bottender/router");
 const fs = require("fs");
 
 async function logMessage(context: any) {
+  console.log(context);
   await context.sendText("HELLO");
 }
 

@@ -14,13 +14,17 @@ export enum ApiEventType {
 }
 
 export type BwaConfig = {
-  cassettes: Array<Maybe<Scalars['String']>>,
+  cassettes: Array<Maybe<Cassette>>,
   botName: Scalars['String'],
 };
 
 export type BwaEvent = {
   eventType: ApiEventType,
   payload: Maybe<BwaConfig>,
+};
+
+export type Cassette = {
+  name: Maybe<Scalars['String']>,
 };
 
 export type Mutation = {

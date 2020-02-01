@@ -61,7 +61,7 @@ const Machine = createMachine<MachineContext, MachineEvent, MachineState>({
       }
     },
     alive: {
-      entry: ["listen"],
+      entry: ["activate"],
       on: {
         FETCHED_STATS: [
           { target: "alive", cond: "isContextValid" },

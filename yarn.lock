@@ -1329,9 +1329,9 @@
   integrity sha512-PGAK759pxyfXE78NbKxyfRcWYA/KwW17X290cNev/qAsn9eQIxkH4shoNBafH37wewhDG/0p1cHPbK6+SzZjWQ==
 
 "@types/ioredis@^4.14.3":
-  version "4.14.3"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.14.3.tgz#6a6089296d6fb90bbaee96d36b19d480efff026a"
-  integrity sha512-WM9xJkP+ckvr8DFy2bFEPWEp7454L/4cBT11qhqPqyzdyZ+8DxUfkf/yo+rQGQJbld0agY2PI5Jb3xxC7KZs6g==
+  version "4.14.6"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.14.6.tgz#446403ab0360bf12d010ba8bbd0670b292f12143"
+  integrity sha512-VUbEZaeCfdiqfd3UDtmPpwewCBdbnjpMZtarKuZV7XwkhqgBZN208WQpsD3hT0BJqEx3GPApFnIVnIOq/eBpbA==
   dependencies:
     "@types/node" "*"
 
@@ -1431,9 +1431,9 @@
     "@types/node" "*"
 
 "@types/mongodb@^3.3.14":
-  version "3.3.14"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.3.14.tgz#5b44bf16b5856eb829545edcc2c4d7726b44b864"
-  integrity sha512-Ie0Fjoifm/TPY2rNOgixzhNSjDgxgR0dMKQk9XqUXHnkfuw26SpbMXjwECfxSnEdG1bH6bIlpLIK7HvGHQhzqg==
+  version "3.3.15"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.3.15.tgz#f8b80a7a1f42fa90f58a1273df80f0e5764e3d25"
+  integrity sha512-q2dL0VEdFdE9iS0xrTP0NSgJJBFH4hBvt3beglCwU3qMWrz7dCuu/CrRjPB4+R8jLjCi/Gik2Mkd+lU0sYsZgQ==
   dependencies:
     "@types/bson" "*"
     "@types/node" "*"
@@ -2551,10 +2551,64 @@ body-parser@1.19.0, body-parser@^1.18.3, body-parser@^1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-bottender@1.1.3, bottender@^1.1.3:
+bottender@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/bottender/-/bottender-1.1.3.tgz#4a2a807696e8e5993dc487e00c2d795a7c757b4e"
   integrity sha512-Mu+A8346ZIOkvQti1UgGjc4/GmR5MEra/nVJIIlQyMn1YLMY48lNfbgwf2eW6dM/ERAyawWxiCTf52RYhOA+Gw==
+  dependencies:
+    "@bottender/express" "^1.0.0"
+    "@hapi/joi" "^15.1.1"
+    "@slack/rtm-api" "^5.0.3"
+    arg "^4.1.1"
+    axios "^0.19.0"
+    chalk "~2.4.2"
+    cli-table3 "^0.5.1"
+    date-fns "^2.7.0"
+    debug "^4.1.1"
+    deep-object-diff "^1.1.0"
+    delay "^4.3.0"
+    dotenv "^8.2.0"
+    express "^4.17.1"
+    figures "^3.1.0"
+    file-type "^12.4.0"
+    fromentries "^1.2.0"
+    fs-extra "^8.1.0"
+    hasha "^5.1.0"
+    import-fresh "^3.2.1"
+    inquirer "^7.0.0"
+    invariant "^2.2.4"
+    ioredis "^4.14.1"
+    jfs "^0.3.0"
+    jsonfile "^5.0.0"
+    lodash "^4.17.15"
+    lru-cache "^5.1.1"
+    messaging-api-common "^1.0.0-beta.5"
+    messaging-api-line "^1.0.0-beta.5"
+    messaging-api-messenger "^1.0.0-beta.10"
+    messaging-api-slack "^1.0.0-beta.10"
+    messaging-api-telegram "^1.0.0-beta.5"
+    messaging-api-viber "^1.0.0-beta.2"
+    messenger-batch "^0.3.1"
+    minimist "^1.2.0"
+    mongodb "^3.3.4"
+    ngrok "^3.2.5"
+    nodemon "^1.19.4"
+    p-map "^3.0.0"
+    p-props "^3.1.0"
+    pascal-case "^2.0.1"
+    pkg-dir "^4.2.0"
+    prompt-confirm "^2.0.4"
+    read-chunk "^3.2.0"
+    readline "^1.3.0"
+    recursive-readdir "^2.2.2"
+    shortid "^2.2.15"
+    update-notifier "^3.0.1"
+    warning "^4.0.3"
+
+bottender@^1.1.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/bottender/-/bottender-1.2.0.tgz#64350aff741e89bf7fa69b3d17db3cddd0afc4f1"
+  integrity sha512-YAPUpDbC8ZDSx4tNBctv+hjburFZiu/Br19yHbMeDY406mFtax5kFWy5Df5FYu//d9ywsm9HXIosfYWqWM3AxA==
   dependencies:
     "@bottender/express" "^1.0.0"
     "@hapi/joi" "^15.1.1"
@@ -3155,10 +3209,25 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concurrently@^5.0.1, concurrently@^5.0.2:
+concurrently@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-5.0.2.tgz#4d2911018c0f15ddec34a8e668fc48dced7f3b1e"
   integrity sha512-iUNVI6PzKO0RVXV9pHWM0khvEbELxf3XLIoChaV6hHyoIaJuxQWZiOwlNysnJX5khsfvIK66+OJqRdbYrdsR1g==
+  dependencies:
+    chalk "^2.4.2"
+    date-fns "^2.0.1"
+    lodash "^4.17.15"
+    read-pkg "^4.0.1"
+    rxjs "^6.5.2"
+    spawn-command "^0.0.2-1"
+    supports-color "^6.1.0"
+    tree-kill "^1.2.2"
+    yargs "^13.3.0"
+
+concurrently@^5.0.2:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-5.1.0.tgz#05523986ba7aaf4b58a49ddd658fab88fa783132"
+  integrity sha512-9ViZMu3OOCID3rBgU31mjBftro2chOop0G2u1olq1OuwRBVRw/GxHTg80TVJBUTJfoswMmEUeuOg1g1yu1X2dA==
   dependencies:
     chalk "^2.4.2"
     date-fns "^2.0.1"

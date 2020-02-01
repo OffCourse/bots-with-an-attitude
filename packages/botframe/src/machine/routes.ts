@@ -1,4 +1,4 @@
-const { text } = require("bottender/router");
+const { router, text } = require("bottender/router");
 
 const sayHello = async (context: any) => {
   await context.sendText("Hello World");
@@ -23,4 +23,4 @@ const routes = [
   text(["Bye", "Goodbye"], sayGoodbye)
 ];
 
-export default routes;
+export default router(routes);

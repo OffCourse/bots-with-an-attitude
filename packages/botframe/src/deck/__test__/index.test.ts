@@ -4,8 +4,9 @@ import TestMachine from "..";
 import * as guards from "../guards";
 import * as actions from "../actions";
 import * as services from "./services";
-import { DeckContext } from "../types";
+import { DeckContext, DeckEventType } from "../types";
 
+const { STOP, ACTIVATE, RECORD, IGNORE, MUTE } = DeckEventType;
 const config = { guards, actions, services };
 
 const init: (config?: any) => TestMachine = config => {
@@ -15,9 +16,33 @@ const init: (config?: any) => TestMachine = config => {
 
 describe("feedback app", () => {
   const machine = TestMachine.withConfig({ guards, actions, services });
-  const testModel = createModel<TestMachine, DeckContext>(machine).withEvents(
-    {}
-  );
+  const testModel = createModel<TestMachine, DeckContext>(machine).withEvents({
+    ACTIVATE: {
+      exec: ({ send }) => {
+        send({ type: ACTIVATE });
+      }
+    },
+    RECORD: {
+      exec: ({ send }) => {
+        send({ type: RECORD });
+      }
+    },
+    IGNORE: {
+      exec: ({ send }) => {
+        send({ type: IGNORE });
+      }
+    },
+    STOP: {
+      exec: ({ send }) => {
+        send({ type: STOP });
+      }
+    },
+    MUTE: {
+      exec: ({ send }) => {
+        send({ type: MUTE });
+      }
+    }
+  });
 
   const testPlans = testModel.getShortestPathPlans();
   testPlans.forEach(plan => {

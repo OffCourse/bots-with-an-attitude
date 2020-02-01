@@ -2,15 +2,13 @@ import { createModel } from "@xstate/test";
 import TestMachine from "..";
 import { init } from "../..";
 import * as guards from "../guards";
-import * as baseActions from "../actions";
-import { setCassettes } from "./actions";
+import * as actions from "./actions";
 import * as services from "./services";
 import { MachineContext, MachineEventType } from "../types";
 import context from "../defaultContext";
 
 const { INITIALIZED, RESET, FETCHED_STATS } = MachineEventType;
 
-const actions = { ...baseActions, setCassettes };
 const config = { guards, actions, services };
 
 describe("feedback app", () => {

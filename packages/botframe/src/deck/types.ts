@@ -1,12 +1,34 @@
-export type DeckContext = {};
-export type DeckEventType = {};
+export enum DeckEventType {
+  ACTIVATE = "ACTIVATE",
+  RECORD = "RECORD",
+  IGNORE = "IGNORE",
+  MUTE = "MUTE",
+  STOP = "STOP"
+}
 
 export type DeckEvent = {
-  type: "INSERT_CASSETTE";
+  type: DeckEventType;
 };
+
+export type DeckContext = {};
 
 export type DeckState = {
   states: {
-    empty: {};
+    active: {
+      states: {
+        listening: {
+          states: {
+            off: {};
+            on: {};
+          };
+        };
+        recording: {
+          states: {
+            off: {};
+            on: {};
+          };
+        };
+      };
+    };
   };
 };

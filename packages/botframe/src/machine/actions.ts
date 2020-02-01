@@ -1,20 +1,24 @@
 import { assign, spawn } from "xstate";
 import { MachineContext, MachineEvent } from "./types";
+import { Cassette } from "../types";
 import Deck from "../deck";
-const { router } = require("bottender/router");
-import routes from "./routes";
 
 export const setBotName = assign<MachineContext, MachineEvent>({
   botName: (_context, { payload }: any) => payload.botName
 });
 
 export const setCassettes = assign<MachineContext, MachineEvent>({
-  decks: ({ decks }: any, { payload }: any) => {
+  decks: (
+    { controller }: MachineContext,
+    { payload }: { payload: { cassettes: Cassette[] } }
+  ) => {
     const cassettes = payload.cassettes || [];
-    return cassettes.map((cassette: string, index: number) => {
+    return cassettes.map(cassette => {
+      const { name } = cassette;
+      const machine = Deck.withContext({ cassette, controller });
       return {
-        name: cassette,
-        ref: spawn(Deck, cassette)
+        name,
+        ref: spawn(machine, name)
       };
     });
   }
@@ -48,8 +52,8 @@ export const reset = assign<MachineContext, MachineEvent>({
   error: undefined
 });
 
-export const listen = ({ controller }: MachineContext) => {
-  controller.onEvent(async (_context: any) => {
-    return router(routes);
+export const activate = ({ decks }: MachineContext) => {
+  decks.map(({ ref }: any) => {
+    ref.send("ACTIVATE");
   });
 };
