@@ -5,7 +5,6 @@ const mockController = {
 const context = {
   controller: mockController,
   botName: undefined,
-  ref: undefined,
   decks: undefined,
   stats: undefined,
   error: undefined

@@ -1,7 +1,11 @@
 import Machine from "../machine";
-import { BotController as BC } from "../machine/types";
+import { Bot } from "bottender";
 
-export type BotController = BC;
+export type MockController = {
+  onEvent: () => void;
+};
+
+export type Controller = Bot<any, any, any> | MockController;
 
 export type Cassette = {
   name: string;

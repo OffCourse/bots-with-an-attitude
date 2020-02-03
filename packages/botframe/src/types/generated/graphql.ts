@@ -10,21 +10,18 @@ export type Scalars = {
 
 export enum ApiEventType {
   Initialized = 'INITIALIZED',
-  Reset = 'RESET'
+  Reset = 'RESET',
+  Activate = 'ACTIVATE'
 }
 
 export type BwaConfig = {
-  cassettes: Array<Maybe<Cassette>>,
+  cassettes: Array<Scalars['String']>,
   botName: Scalars['String'],
 };
 
 export type BwaEvent = {
   eventType: ApiEventType,
   payload: Maybe<BwaConfig>,
-};
-
-export type Cassette = {
-  name: Maybe<Scalars['String']>,
 };
 
 export type Mutation = {

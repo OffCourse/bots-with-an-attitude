@@ -13,11 +13,12 @@ export type Scalars = {
 
 export enum ApiEventType {
   Initialized = 'INITIALIZED',
-  Reset = 'RESET'
+  Reset = 'RESET',
+  Activate = 'ACTIVATE'
 }
 
 export type BwaConfig = {
-  cassettes: Array<Maybe<Scalars['String']>>,
+  cassettes: Array<Scalars['String']>,
   botName: Scalars['String'],
 };
 

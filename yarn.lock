@@ -2605,7 +2605,7 @@ bottender@1.1.3:
     update-notifier "^3.0.1"
     warning "^4.0.3"
 
-bottender@^1.1.3:
+bottender@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/bottender/-/bottender-1.2.0.tgz#64350aff741e89bf7fa69b3d17db3cddd0afc4f1"
   integrity sha512-YAPUpDbC8ZDSx4tNBctv+hjburFZiu/Br19yHbMeDY406mFtax5kFWy5Df5FYu//d9ywsm9HXIosfYWqWM3AxA==

@@ -3,7 +3,7 @@ import Machine from "./machine";
 import * as actions from "./machine/actions";
 import * as guards from "./machine/guards";
 import * as services from "./machine/services";
-import { BotController } from "./types";
+import { Controller } from "./types";
 import defaultContext from "./machine/defaultContext";
 
 export type BotConfig = {
@@ -18,7 +18,7 @@ const defaultConfig = {
   services
 };
 
-const init: (controller?: BotController, config?: BotConfig) => Machine = (
+const init: (controller?: Controller, config?: BotConfig) => Machine = (
   controller,
   config = defaultConfig
 ) => {

@@ -16,6 +16,11 @@ const resolvers: Resolvers = {
             payload: event.payload!
           });
         }
+        case ApiEventType.Activate: {
+          return send({
+            type: MachineEventType.ACTIVATE
+          });
+        }
         case ApiEventType.Reset: {
           return send({
             type: MachineEventType.RESET

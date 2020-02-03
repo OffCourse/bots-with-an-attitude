@@ -67,7 +67,11 @@ const Machine = createMachine<MachineContext, MachineEvent, MachineState>({
           { target: "alive", cond: "isContextValid" },
           { target: "maintenance", actions: "setError" }
         ],
-        RESET: { target: "dormant", actions: "reset" }
+        RESET: { target: "dormant", actions: "reset" },
+        ACTIVATE: {
+          internal: true,
+          actions: "activate"
+        }
       },
       meta: {
         test: ({ state: { context, value } }: Machine) => {

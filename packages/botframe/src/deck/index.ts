@@ -1,12 +1,12 @@
-import { Machine, Interpreter } from "xstate";
+import { Interpreter, createMachine } from "xstate";
 import { assert } from "chai";
+import * as actions from "./actions";
 import { DeckContext, DeckState, DeckEvent } from "./types";
 
 type Deck = Interpreter<DeckContext, DeckState, DeckEvent>;
 
-const Deck = Machine<DeckContext, DeckState, DeckEvent>({
+const Deck = createMachine<DeckContext, DeckEvent, DeckState>({
   initial: "active",
-  context: {},
   states: {
     active: {
       type: "parallel",
@@ -14,7 +14,7 @@ const Deck = Machine<DeckContext, DeckState, DeckEvent>({
         listening: {
           initial: "off",
           on: {
-            ACTIVATE: { target: "listening.on" },
+            ACTIVATE: { target: "listening.on", actions: "listen" },
             RECORD: { target: "recording.on" },
             IGNORE: { target: "recording.off" },
             MUTE: { target: "listening.off" }
@@ -80,5 +80,9 @@ const Deck = Machine<DeckContext, DeckState, DeckEvent>({
     }
   }
 });
+
+const configuredDeck = Deck.withConfig({ actions });
+
+export { configuredDeck };
 
 export default Deck;

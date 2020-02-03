@@ -10,7 +10,10 @@ const { STOP, ACTIVATE, RECORD, IGNORE, MUTE } = DeckEventType;
 const config = { guards, actions, services };
 
 const init: (config?: any) => TestMachine = config => {
-  const machine = TestMachine.withConfig(config);
+  const machine = TestMachine.withConfig(config).withContext({
+    cassette: { name: "HELLO" },
+    controller: { onEvent: () => {} }
+  });
   return interpret(machine).start();
 };
 

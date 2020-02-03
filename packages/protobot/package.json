@@ -8,8 +8,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-ts": "tsc -w --preserveWatchOutput",
+    "prebuild": "rimraf ./dist",
     "serve": "nodemon dist/server.js",
     "start": "concurrently \"yarn:watch-ts\" \"yarn:serve\"",
+    "prestart": "yarn build",
     "build": "tsc",
     "predeploy": "yarn build"
   },
@@ -37,7 +39,7 @@
     "@types/uuid": "^3.4.6",
     "apollo-server-express": "^2.9.16",
     "body-parser": "^1.19.0",
-    "bottender": "^1.1.3",
+    "bottender": "^1.2.0",
     "chai": "^4.2.0",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",

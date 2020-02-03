@@ -1,14 +1,11 @@
 enum APIEventType {
   INITIALIZED
   RESET
-}
-
-input Cassette {
-  name: String
+  ACTIVATE
 }
 
 input BWAConfig {
-  cassettes: [Cassette]!
+  cassettes: [String!]!
   botName: String!
 }
 

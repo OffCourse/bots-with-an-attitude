@@ -1,9 +1,11 @@
-import { BwaConfig } from "../types/generated/graphql";
+import { BwaConfig as APIConfig } from "../types/generated/graphql";
+import { Controller } from "../types";
 
 export enum MachineEventType {
   INITIALIZED = "INITIALIZED",
   RESET = "RESET",
-  FETCHED_STATS = "FETCHED_STATS"
+  FETCHED_STATS = "FETCHED_STATS",
+  ACTIVATE = "ACTIVATE"
 }
 
 export type MachineStats = {
@@ -12,15 +14,13 @@ export type MachineStats = {
 
 export interface MachineEvent {
   type: MachineEventType;
-  payload?: BwaConfig | { stats: MachineStats };
+  payload?: APIConfig | { stats: MachineStats };
 }
-export type BotController = { onEvent: (context: any) => void };
 
 export type MachineContext = {
-  controller: BotController;
+  controller: Controller;
   botName: string | undefined;
   decks: any;
-  ref: any;
   stats: MachineStats | undefined;
   error: string | undefined;
 };

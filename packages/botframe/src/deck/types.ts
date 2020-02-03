@@ -1,3 +1,5 @@
+import { Controller, Cassette } from "../types";
+
 export enum DeckEventType {
   ACTIVATE = "ACTIVATE",
   RECORD = "RECORD",
@@ -10,25 +12,12 @@ export type DeckEvent = {
   type: DeckEventType;
 };
 
-export type DeckContext = {};
+export type DeckContext = {
+  cassette: Cassette;
+  controller: Controller;
+};
 
 export type DeckState = {
-  states: {
-    active: {
-      states: {
-        listening: {
-          states: {
-            off: {};
-            on: {};
-          };
-        };
-        recording: {
-          states: {
-            off: {};
-            on: {};
-          };
-        };
-      };
-    };
-  };
+  value: "active";
+  context: Required<DeckContext>;
 };
